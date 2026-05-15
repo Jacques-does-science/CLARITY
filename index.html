@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLARITY LAB at UCD</title>
+  <meta name="description" content="CLARITY LAB at UCD integrates microbiology, multi-omics and applied bioinformatics to make microbial systems visible, testable and traceable." />
+  <style>
+    :root {
+      --white:#FFFFFF;
+      --lab-mist:#F4FAF8;
+      --bio-teal:#007C7A;
+      --deep-marine:#123C43;
+      --culture-green:#79B76D;
+      --ferment-gold:#F2B84B;
+      --coral:#EF6F61;
+      --genome-blue:#4C8FD8;
+      --soft-lilac:#B9A7E8;
+      --ink:#18292E;
+      --slate:#50676E;
+      --line-grey:#DDE8E6;
+      --pale-grey:#F7F9F9;
+      --radius:18px;
+      --shadow:0 10px 28px rgba(18,60,67,.08);
+      --max:1180px;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      font-size:17px;
+      line-height:1.65;
+    }
+    a { color:inherit; }
+    img { max-width:100%; display:block; }
+
+    .skip {
+      position:absolute;
+      left:-999px;
+      top:12px;
+      z-index:999;
+      background:var(--white);
+      color:var(--deep-marine);
+      padding:.75rem 1rem;
+      border:2px solid var(--bio-teal);
+      border-radius:10px;
+    }
+    .skip:focus { left:12px; }
+
+    .site-header {
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.94);
+      border-bottom:1px solid var(--line-grey);
+      backdrop-filter:blur(12px);
+    }
+    .header-inner {
+      max-width:var(--max);
+      margin:0 auto;
+      padding:1rem 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+    .logo-link {
+      display:inline-flex;
+      align-items:center;
+      text-decoration:none;
+      border-radius:12px;
+      outline-offset:4px;
+    }
+    .logo { width:260px; max-width:52vw; height:auto; }
+    .nav { display:flex; align-items:center; gap:.25rem; }
+    .nav a {
+      padding:.55rem .75rem;
+      color:var(--deep-marine);
+      text-decoration:none;
+      font-size:.94rem;
+      font-weight:650;
+      border-radius:10px;
+      text-underline-offset:4px;
+    }
+    .nav a:hover, .nav a:focus-visible {
+      background:var(--lab-mist);
+      outline:none;
+      text-decoration:underline;
+      text-decoration-color:var(--bio-teal);
+    }
+    .menu-button {
+      display:none;
+      border:1px solid var(--line-grey);
+      background:var(--white);
+      color:var(--deep-marine);
+      border-radius:12px;
+      padding:.55rem .7rem;
+      font-weight:700;
+    }
+
+    main { overflow:hidden; }
+    section { scroll-margin-top:92px; }
+    .section { padding:5rem 1.25rem; }
+    .section.alt { background:var(--lab-mist); }
+    .section.pale { background:var(--pale-grey); }
+    .container { max-width:var(--max); margin:0 auto; }
+
+    .hero {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(121,183,109,.18), transparent 28rem),
+        radial-gradient(circle at 90% 12%, rgba(76,143,216,.15), transparent 30rem),
+        var(--lab-mist);
+      padding:5rem 1.25rem 3.5rem;
+    }
+    .hero-grid {
+      max-width:var(--max);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      align-items:center;
+      gap:3rem;
+    }
+    .eyebrow {
+      margin:0 0 1rem;
+      color:var(--bio-teal);
+      font-size:.86rem;
+      font-weight:800;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+    h1, h2, h3 { color:var(--deep-marine); line-height:1.12; margin:0; letter-spacing:-.035em; }
+    h1 { font-size:clamp(2.5rem, 6vw, 4.6rem); max-width:900px; }
+    h2 { font-size:clamp(2rem, 4vw, 3rem); }
+    h3 { font-size:1.35rem; }
+    .lead { font-size:1.13rem; line-height:1.75; color:var(--ink); max-width:760px; }
+    .hero .lead { margin:1.35rem 0 1.75rem; }
+    .buttons { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.65rem; }
+    .button {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      min-height:46px;
+      padding:.76rem 1.05rem;
+      border-radius:12px;
+      font-weight:750;
+      text-decoration:none;
+      border:2px solid transparent;
+      transition:.18s ease;
+    }
+    .button.primary { background:var(--bio-teal); color:var(--white); }
+    .button.primary:hover { background:#006866; }
+    .button.secondary { color:var(--deep-marine); border-color:var(--bio-teal); background:var(--white); }
+    .button.secondary:hover { background:var(--lab-mist); }
+    .button.subtle { color:var(--deep-marine); background:transparent; text-decoration:underline; text-decoration-color:rgba(0,124,122,.35); text-underline-offset:5px; }
+    .button:focus-visible { outline:4px solid rgba(76,143,216,.38); outline-offset:3px; }
+
+    .hero-card {
+      background:rgba(255,255,255,.84);
+      border:1px solid var(--line-grey);
+      border-radius:28px;
+      padding:1.2rem;
+      box-shadow:var(--shadow);
+    }
+    .placeholder-diagram {
+      min-height:330px;
+      border-radius:22px;
+      border:1px dashed var(--line-grey);
+      background:linear-gradient(135deg, rgba(244,250,248,.9), rgba(255,255,255,.96));
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:2rem;
+      color:var(--slate);
+    }
+    .placeholder-diagram.large { min-height:390px; }
+    .placeholder-title { margin:.8rem 0 .2rem; color:var(--deep-marine); font-size:1.15rem; font-weight:800; }
+    .placeholder-copy { margin:0; max-width:28rem; color:var(--slate); }
+    .diagram-dots { position:relative; width:220px; height:130px; }
+    .diagram-dots::before {
+      content:"";
+      position:absolute;
+      left:20px;
+      right:20px;
+      top:65px;
+      border-top:3px dashed var(--line-grey);
+      transform:rotate(-8deg);
+    }
+    .diagram-dots span { position:absolute; display:block; border-radius:999px; opacity:.82; }
+    .diagram-dots span:nth-child(1){width:64px;height:64px;left:8px;top:20px;background:#4C8FD8;}
+    .diagram-dots span:nth-child(2){width:42px;height:42px;left:78px;top:2px;background:#007C7A;}
+    .diagram-dots span:nth-child(3){width:56px;height:56px;left:92px;top:72px;background:#79B76D;}
+    .diagram-dots span:nth-child(4){width:46px;height:46px;left:158px;top:28px;background:#F2B84B;}
+    .diagram-dots span:nth-child(5){width:26px;height:26px;left:53px;top:86px;background:#50676E;}
+
+    .support-strip {
+      max-width:var(--max);
+      margin:3rem auto 0;
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line-grey);
+      border-radius:22px;
+      padding:1.2rem;
+    }
+    .support-strip p { margin:.1rem 0 1rem; color:var(--slate); font-size:.95rem; font-weight:700; text-align:center; }
+    .logo-row { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:.8rem; }
+    .funder-logo {
+      min-height:74px;
+      border:1px dashed var(--line-grey);
+      border-radius:16px;
+      background:var(--white);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--deep-marine);
+      font-weight:850;
+      letter-spacing:.04em;
+    }
+    .funder-logo small { display:block; font-weight:650; color:var(--slate); letter-spacing:0; margin-top:.15rem; }
+
+    .intro { max-width:780px; margin:0 auto 3rem; text-align:center; }
+    .intro .lead { margin:1rem auto 0; color:var(--slate); }
+    .cards { display:grid; gap:1.1rem; }
+    .cards.two { grid-template-columns:repeat(2, minmax(0,1fr)); }
+    .cards.three { grid-template-columns:repeat(3, minmax(0,1fr)); }
+    .cards.four { grid-template-columns:repeat(4, minmax(0,1fr)); }
+    .card { background:var(--white); border:1px solid var(--line-grey); border-radius:var(--radius); padding:1.4rem; box-shadow:0 1px 0 rgba(18,60,67,.03); }
+    .card strong { color:var(--deep-marine); }
+    .pillar { position:relative; overflow:hidden; padding-top:1.75rem; }
+    .pillar::before { content:""; position:absolute; inset:0 0 auto 0; height:6px; background:var(--accent, var(--bio-teal)); }
+    .icon {
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:1rem;
+      background:color-mix(in srgb, var(--accent, var(--bio-teal)) 16%, white);
+      color:var(--accent, var(--bio-teal));
+      font-weight:900;
+    }
+    .repo-links { margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--line-grey); }
+    .repo-links p { margin:.15rem 0 .55rem; color:var(--deep-marine); font-weight:800; font-size:.95rem; }
+    .repo-links a {
+      display:block;
+      margin:.35rem 0;
+      color:var(--deep-marine);
+      text-decoration:underline;
+      text-decoration-color:rgba(0,124,122,.38);
+      text-underline-offset:4px;
+      font-weight:650;
+      font-size:.95rem;
+    }
+
+    .explainer { display:grid; grid-template-columns:.95fr 1.05fr; gap:2rem; align-items:center; }
+    .workflow { background:var(--white); border:1px solid var(--line-grey); border-radius:28px; padding:1rem; box-shadow:var(--shadow); }
+    .diagram-flow { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:1rem; margin-bottom:.6rem; }
+    .diagram-flow span { min-width:9rem; border:1px solid var(--line-grey); border-radius:16px; background:var(--white); padding:1rem 1.1rem; color:var(--deep-marine); font-weight:800; }
+    .diagram-flow b { display:block; width:54px; height:3px; background:var(--line-grey); }
+
+    .people-grid { display:grid; grid-template-columns:.88fr 1.12fr; gap:1.3rem; align-items:start; }
+    .pi-card { background:var(--pale-grey); }
+    .portrait-placeholder {
+      height:230px;
+      border-radius:20px;
+      border:1px solid var(--line-grey);
+      background:
+        radial-gradient(circle at 34% 34%, rgba(185,167,232,.25), transparent 6rem),
+        radial-gradient(circle at 70% 62%, rgba(0,124,122,.18), transparent 7rem),
+        var(--lab-mist);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--slate);
+      font-weight:700;
+      text-align:center;
+      padding:1rem;
+      margin-bottom:.9rem;
+    }
+
+    .portrait-photo {
+      width:100%;
+      height:230px;
+      object-fit:cover;
+      object-position:center;
+      border-radius:20px;
+      border:1px solid var(--line-grey);
+      display:block;
+      margin-bottom:.9rem;
+      background:var(--lab-mist);
+    }
+    .member { display:grid; gap:.45rem; }
+    .member .role { margin:0; color:var(--bio-teal); font-weight:800; font-size:.95rem; }
+    .member .thesis { margin:.15rem 0 0; font-weight:760; color:var(--deep-marine); }
+    .member .outside { margin:.35rem 0 0; padding:.75rem .85rem; border-radius:12px; background:var(--lab-mist); color:var(--slate); font-size:.95rem; }
+    .notice { border-left:5px solid var(--bio-teal); background:var(--lab-mist); padding:1rem 1.1rem; border-radius:12px; color:var(--ink); }
+
+    .alumni-card { display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:start; }
+    .alumni-entry { border-top:1px solid var(--line-grey); padding-top:1rem; margin-top:1rem; }
+    .alumni-entry:first-child { border-top:0; padding-top:0; margin-top:0; }
+    .alumni-entry p { margin:.2rem 0; color:var(--slate); }
+
+    .output-list { display:grid; gap:1rem; }
+    .output { display:grid; grid-template-columns:1fr auto; align-items:center; gap:1rem; }
+
+    .gallery-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1.1rem; }
+    .gallery-placeholder {
+      min-height:230px;
+      border-radius:20px;
+      border:1px dashed var(--line-grey);
+      background:linear-gradient(135deg, var(--lab-mist), var(--white));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:1.25rem;
+      color:var(--slate);
+      font-weight:700;
+    }
+
+    .footer { background:var(--deep-marine); color:var(--white); padding:4rem 1.25rem 2rem; }
+    .footer-grid { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; }
+    .footer a { color:var(--white); text-decoration:underline; text-decoration-color:rgba(255,255,255,.35); text-underline-offset:4px; }
+    .footer p, .footer li { color:rgba(244,250,248,.82); }
+    .footer-logo { width:320px; max-width:100%; background:#fff; border-radius:16px; padding:.7rem; display:block; margin-bottom:1rem; }
+    .footer-bottom { max-width:var(--max); margin:2.5rem auto 0; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,.18); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; color:rgba(244,250,248,.78); font-size:.9rem; }
+
+    @media (max-width:980px) {
+      .hero-grid, .explainer, .people-grid, .footer-grid, .alumni-card { grid-template-columns:1fr; }
+      .cards.three, .cards.four, .gallery-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
+      .hero-card { order:-1; }
+      .logo-row { grid-template-columns:repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width:780px) {
+      .header-inner { align-items:flex-start; }
+      .menu-button { display:inline-flex; }
+      .nav {
+        display:none;
+        position:absolute;
+        left:1rem;
+        right:1rem;
+        top:76px;
+        padding:.75rem;
+        flex-direction:column;
+        align-items:stretch;
+        background:var(--white);
+        border:1px solid var(--line-grey);
+        border-radius:16px;
+        box-shadow:var(--shadow);
+      }
+      .nav.open { display:flex; }
+      .nav a { padding:.8rem; }
+      .cards.two, .cards.three, .cards.four, .gallery-grid { grid-template-columns:1fr; }
+      .section { padding:3.75rem 1rem; }
+      .hero { padding:3.25rem 1rem; }
+      .output { grid-template-columns:1fr; }
+      .logo { width:210px; }
+      .logo-row { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo-link" href="#home" aria-label="CLARITY LAB at UCD home">
+        <img class="logo" src="assets/logos/wide_logo.jpg" alt="CLARITY LAB at UCD logo">
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#people">People</a>
+        <a href="#alumni">Alumni</a>
+        <a href="#outputs">Outputs</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Integrative Microbiology, Multi-Omics & Applied Bioinformatics</p>
+          <h1>Making microbial systems visible, testable and traceable.</h1>
+          <p class="lead">CLARITY LAB at UCD, led by Dr Guerrino Macori, integrates culture-dependent microbiology, direct-from-sample sequencing, multi-omics, emerging diagnostic tools and open bioinformatics to study microbial diversity, food safety and biological risk across the food chain, built environments, animals and human health contexts.</p>
+          <div class="buttons">
+            <a class="button primary" href="#research">Explore our research</a>
+            <a class="button secondary" href="#contact">Contact the lab</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Hero diagram placeholder">
+          <div class="placeholder-diagram large">
+            <div class="diagram-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            <p class="placeholder-title">Hero diagram placeholder</p>
+            <p class="placeholder-copy">Replace with a static microbial-systems visual or lab image.</p>
+          </div>
+        </div>
+      </div>
+      <div class="support-strip" aria-label="Past and current funders and partners">
+        <p>Past and current funders / project partners</p>
+        <div class="logo-row">
+          <div class="funder-logo">Research Ireland<small>logo placeholder</small></div>
+          <div class="funder-logo">DAFM<small>logo placeholder</small></div>
+          <div class="funder-logo">WHO<small>logo placeholder</small></div>
+          <div class="funder-logo">Teagasc<small>logo placeholder</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pale" id="dark-matter">
+      <div class="container explainer">
+        <div>
+          <p class="eyebrow">Explainer</p>
+          <h2>What is microbial dark matter?</h2>
+          <p class="lead">Many microorganisms remain difficult to grow, classify or interpret using standard methods. We study this hidden microbial diversity by combining culture-dependent microbiology, direct-from-sample sequencing, multi-omics and bioinformatics.</p>
+          <p>This allows us to investigate not only which microbes are present, but what they may be doing, how they interact and why they matter for food safety, antimicrobial resistance and One Health.</p>
+        </div>
+        <div class="workflow">
+          <div class="placeholder-diagram">
+            <div class="diagram-flow" aria-hidden="true">
+              <span>Sample</span><b></b><span>Culture / sequence</span><b></b><span>Insight</span>
+            </div>
+            <p class="placeholder-title">Workflow diagram placeholder</p>
+            <p class="placeholder-copy">Replace with a simple sample-to-insight diagram.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="container">
+        <div class="intro">
+          <p class="eyebrow">Research</p>
+          <h2>Research pillars</h2>
+          <p class="lead">Our work connects microbial discovery, food-system safety, pathogen genomics, antimicrobial resistance and reproducible analysis to generate insight for public health and safer food systems.</p>
+        </div>
+        <div class="cards four">
+          <article class="card pillar" style="--accent:var(--ferment-gold)">
+            <div class="icon" aria-hidden="true">01</div>
+            <h3>Microbial Dark Matter & Model Microbiomes</h3>
+            <p>We investigate hidden and poorly characterised microorganisms in complex microbial communities, using fermented foods and other model systems to understand microbial diversity, function and resilience.</p>
+          </article>
+          <article class="card pillar" style="--accent:var(--culture-green)">
+            <div class="icon" aria-hidden="true">02</div>
+            <h3>Food Safety & Microbial Ecology</h3>
+            <p>We study microbial communities across food systems to understand safety, quality, spoilage, persistence and risk.</p>
+          </article>
+          <article class="card pillar" style="--accent:var(--bio-teal)">
+            <div class="icon" aria-hidden="true">03</div>
+            <h3>Pathogen Genomics, AMR & One Health</h3>
+            <p>We use microbiological, genomic and bioinformatic tools to track pathogens, antimicrobial resistance and food-chain risks across human, animal, environmental and built-environment contexts.</p>
+          </article>
+          <article class="card pillar" style="--accent:var(--genome-blue)">
+            <div class="icon" aria-hidden="true">04</div>
+            <h3>Methods, Multi-Omics & Open Bioinformatics</h3>
+            <p>We develop and apply reproducible workflows to analyse complex microbial, genomic and multi-omics data, supporting microbial ecology, food safety and pathogen surveillance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="people">
+      <div class="container">
+        <div class="intro">
+          <p class="eyebrow">People & Culture</p>
+          <h2>The lab team</h2>
+          <p class="lead">CLARITY LAB at UCD is a collaborative research environment for students, researchers and partners working across microbiology, bioinformatics, food safety and public health.</p>
+        </div>
+        <div class="people-grid">
+          <article class="card pi-card member">
+            <img class="portrait-photo" src="assets/people/Guerrino.jpg" alt="Portrait of Dr Guerrino Macori" loading="lazy">
+            <p class="role">Principal Investigator</p>
+            <h3>Dr Guerrino Macori</h3>
+            <p class="thesis">Assistant Professor, UCD College of Science / School of Biology and Environmental Science</p>
+            <p>Dr. Guerrino Macori is an Assistant Professor in Applied Bioinformatics at UCD and a Conway Fellow. His research group investigates the intersection of metagenomics, microbial ecology, and public health. The lab leverages next-generation sequencing and advanced computational workflows—including long-read technologies and metatranscriptomics—to address critical challenges across clinical, agricultural, and urban environments. Key research themes encompass the tracking of antimicrobial resistance, the promotion of sustainable urban food systems, and the genomic characterisation of pathogens within a One Health framework. Beyond technical innovation, Dr. Macori is a dedicated advocate for open scientific infrastructure, contributing to international consortiums like PHA4GE. His group is fundamentally committed to fostering an inclusive, progressive research culture, actively championing Equity, Diversity, and Inclusion in STEM and developing award-winning, open-source educational tools.</p>
+            <p class="outside"><strong>Outside the lab:</strong> Add a short, human profile line here.</p>
+          </article>
+          <div class="cards two">
+            <article class="card member">
+              <img class="portrait-photo" src="assets/people/Mingwei.jpg" alt="Portrait of Mingwei Hong" loading="lazy">
+              <p class="role">PhD Candidate</p>
+              <h3>Mingwei Hong</h3>
+              <p class="thesis">Computational Reconstruction of Synthetic Microbiomes for Predicting Pathogen Dynamics</p>
+              <p>Mingwei explores synthetic microbiomes as controlled model systems for investigating microbial community dynamics and pathogen behaviour.</p>
+              <p class="outside"><strong>Outside the lab:</strong> Add interests, hobbies or a short personal note.</p>
+            </article>
+            <article class="card member">
+              <img class="portrait-photo" src="assets/people/Jacques.jpeg" alt="Portrait of Jacques Olivier" loading="lazy">
+              <p class="role">PhD Candidate</p>
+              <h3>Jacques Olivier</h3>
+              <p class="thesis">AI-Enhanced Deciphering of Microbial Dark Matter</p>
+              <p>Jacques investigates microbial dark matter to understand how functional traits, particularly antimicrobial resistance, disseminate through complex microbiomes.</p>
+              <p class="outside"><strong>Outside the lab:</strong> Add interests, hobbies or a short personal note.</p>
+            </article>
+            <article class="card member">
+              <img class="portrait-photo" src="assets/people/Atefeh.jpeg" alt="Portrait of Atefeh Asadi" loading="lazy">
+              <p class="role">Visiting PhD Researcher</p>
+              <p class="affiliation-line">Tallinn University of Technology, Estonia</p>
+              <h3>Atefeh Asadi</h3>
+              <p class="thesis">Project title placeholder</p>
+              <p>Add a short description of Atefeh’s research focus.</p>
+              <p class="outside"><strong>Outside the lab:</strong> Add interests, hobbies or a short personal note.</p>
+            </article>
+            <article class="card member">
+              <img class="portrait-photo" src="assets/people/Sara.jpg" alt="Portrait of Sara Benetti" loading="lazy">
+              <p class="role">Visiting PhD Researcher</p>
+              <p class="affiliation-line">Università di Padova, Italy</p>
+              <h3>Sara Benetti</h3>
+              <p class="thesis">Project title placeholder</p>
+              <p>Add a short description of Sara’s research focus.</p>
+              <p class="outside"><strong>Outside the lab:</strong> Add interests, hobbies or a short personal note.</p>
+            </article>
+          </div>
+        </div>
+        <p class="notice" style="margin-top:1.3rem;">For funded PhD, postdoctoral and research staff opportunities, please follow official UCD recruitment channels and announcements shared by the PI or School. Academic collaboration and project enquiries are welcome by email.</p>
+      </div>
+    </section>
+
+    <section class="section" id="alumni">
+      <div class="container alumni-card">
+        <div>
+          <p class="eyebrow">Alumni</p>
+          <h2>Where lab training leads</h2>
+          <p class="lead">Use this section to show the career paths, research destinations and professional outcomes of former lab members. It gives prospective students and reviewers visual proof of training success without requiring frequent updates.</p>
+        </div>
+        <div class="card">
+          <div class="alumni-entry">
+            <h3>Alumni profile placeholder</h3>
+            <p><strong>Former role:</strong> PhD student / postdoctoral researcher / visiting researcher</p>
+            <p><strong>Now:</strong> Current role or destination placeholder</p>
+            <p><strong>Focus:</strong> Short summary of work completed in the lab.</p>
+          </div>
+          <div class="alumni-entry">
+            <h3>Alumni profile placeholder</h3>
+            <p><strong>Former role:</strong> Research assistant / MSc student / collaborator</p>
+            <p><strong>Now:</strong> Current role or destination placeholder</p>
+            <p><strong>Focus:</strong> Short summary of work completed in the lab.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pale" id="outputs">
+      <div class="container">
+        <div class="intro">
+          <p class="eyebrow">Selected Outputs</p>
+          <h2>Curated publications and project outputs</h2>
+          <p class="lead">Keep this section selective. Add only representative outputs, and link to maintained external profiles for a complete publication record.</p>
+        </div>
+        <div class="output-list">
+          <article class="card output">
+            <div>
+              <h3>Selected output placeholder</h3>
+              <p>Add title, year, short significance note and DOI or project link.</p>
+            </div>
+            <a class="button secondary" href="#">Add link</a>
+          </article>
+          <article class="card output">
+            <div>
+              <h3>Selected output placeholder</h3>
+              <p>Add title, year, short significance note and DOI or project link.</p>
+            </div>
+            <a class="button secondary" href="#">Add link</a>
+          </article>
+          <article class="card output">
+            <div>
+              <h3>Selected output placeholder</h3>
+              <p>Add title, year, short significance note and DOI or project link.</p>
+            </div>
+            <a class="button secondary" href="#">Add link</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="intro">
+          <p class="eyebrow">Gallery</p>
+          <h2>Lab images</h2>
+          <p class="lead">Add real photos of lab work, field or food-system sampling, conferences, teaching and outreach.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-placeholder">Gallery image placeholder<br>Lab work</div>
+          <div class="gallery-placeholder">Gallery image placeholder<br>Food systems</div>
+          <div class="gallery-placeholder">Gallery image placeholder<br>Teaching and conferences</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer" id="contact">
+      <div class="footer-grid">
+        <div>
+          <img class="footer-logo" src="assets/logos/wide_logo.jpg" alt="CLARITY LAB at UCD logo">
+          <h2 style="color:#fff">Contact and collaboration</h2>
+          <p>We collaborate with academic, clinical, public-health, food-sector and computational partners on projects involving microbiology, sequencing, microbial ecology, genomic epidemiology, antimicrobial resistance and food-system safety.</p>
+          <div class="buttons">
+            <a class="button primary" href="mailto:guerrino.macori@ucd.ie">Email the lab</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="color:#fff">CLARITY LAB at UCD</h3>
+          <p><strong>Dr Guerrino Macori</strong><br>Assistant Professor<br>UCD College of Science / School of Biology and Environmental Science</p>
+          <p>Affiliations: UCD Conway Institute, UCD Centre for Food Safety, and UCD Institute of Food and Health.</p>
+          <p>University College Dublin<br>Belfield, Dublin 4, Ireland</p>
+          <p><a href="mailto:guerrino.macori@ucd.ie">guerrino.macori@ucd.ie</a></p>
+          <p><a href="#">UCD profile placeholder</a> · <a href="#">ORCID placeholder</a> · <a href="#">Google Scholar placeholder</a> · <a href="#">GitHub placeholder</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> CLARITY LAB at UCD · University College Dublin</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const button = document.getElementById('menuButton');
+    const nav = document.getElementById('site-nav');
+    button.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
+      button.textContent = open ? 'Close' : 'Menu';
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+        button.textContent = 'Menu';
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- GoatCounter analytics -->
+  <script data-goatcounter="https://clarity.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
