@@ -210,18 +210,34 @@
     .support-strip p { margin:.1rem 0 1rem; color:var(--slate); font-size:.95rem; font-weight:700; text-align:center; }
     .logo-row { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:.8rem; }
     .funder-logo {
-      min-height:74px;
-      border:1px dashed var(--line-grey);
+      min-height:80px;
+      border:1px solid var(--line-grey);
       border-radius:16px;
       background:var(--white);
       display:flex;
       align-items:center;
       justify-content:center;
-      color:var(--deep-marine);
-      font-weight:850;
-      letter-spacing:.04em;
+      padding:.5rem 1rem;
+      transition:all .3s cubic-bezier(.4, 0, .2, 1);
+      box-shadow:0 2px 8px rgba(18,60,67,.02);
     }
-    .funder-logo small { display:block; font-weight:650; color:var(--slate); letter-spacing:0; margin-top:.15rem; }
+    .funder-logo:hover {
+      border-color:var(--bio-teal);
+      transform:translateY(-2px);
+      box-shadow:0 8px 20px rgba(18,60,67,.06);
+    }
+    .funder-logo img {
+      max-height:48px;
+      max-width:100%;
+      object-fit:contain;
+      filter:grayscale(100%);
+      opacity:.75;
+      transition:all .3s cubic-bezier(.4, 0, .2, 1);
+    }
+    .funder-logo:hover img {
+      filter:grayscale(0%);
+      opacity:1;
+    }
 
     .intro { max-width:780px; margin:0 auto 3rem; text-align:center; }
     .intro .lead { margin:1rem auto 0; color:var(--slate); }
@@ -450,10 +466,18 @@
       <div class="support-strip" aria-label="Past and current funders and partners">
         <p>Past and current funders / project partners</p>
         <div class="logo-row">
-          <div class="funder-logo">Research Ireland<small>logo placeholder</small></div>
-          <div class="funder-logo">DAFM<small>logo placeholder</small></div>
-          <div class="funder-logo">WHO<small>logo placeholder</small></div>
-          <div class="funder-logo">Teagasc<small>logo placeholder</small></div>
+          <div class="funder-logo">
+            <img src="assets/logos/research_ireland-logo.jpg" alt="Research Ireland logo" loading="lazy">
+          </div>
+          <div class="funder-logo">
+            <img src="assets/logos/dafm-logo.jpg" alt="DAFM Department of Agriculture, Food and the Marine logo" loading="lazy">
+          </div>
+          <div class="funder-logo">
+            <img src="assets/logos/WHO-logo.jpg" alt="World Health Organization logo" loading="lazy">
+          </div>
+          <div class="funder-logo">
+            <img src="assets/logos/Teagasc-logo.png" alt="Teagasc Agriculture and Food Development Authority logo" loading="lazy">
+          </div>
         </div>
       </div>
     </section>
