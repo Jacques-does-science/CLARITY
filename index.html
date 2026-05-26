@@ -311,7 +311,7 @@
       margin-bottom:.9rem;
       background:var(--lab-mist);
     }
-    .member { display:grid; gap:.45rem; }
+    .member { display:grid; gap:.45rem; align-content:start; }
     .member .role { margin:0; color:var(--bio-teal); font-weight:800; font-size:.95rem; }
     .member .thesis { margin:.15rem 0 0; font-weight:760; color:var(--deep-marine); }
     .member .outside { margin:.35rem 0 0; padding:.75rem .85rem; border-radius:12px; background:var(--lab-mist); color:var(--slate); font-size:.95rem; }
@@ -454,7 +454,6 @@
       <nav class="nav" id="site-nav" aria-label="Primary navigation">
         <a href="#research">Research</a>
         <a href="#people">People</a>
-        <a href="#alumni">Alumni</a>
         <a href="#outputs">Outputs</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
@@ -468,7 +467,8 @@
         <div>
           <p class="eyebrow">Integrative Microbiology, Multi-Omics & Applied Bioinformatics</p>
           <h1>Making microbial systems visible, testable and traceable.</h1>
-          <p class="lead">CLARITY LAB at UCD, led by Dr Guerrino Macori, integrates culture-dependent microbiology, direct-from-sample sequencing, multi-omics, emerging diagnostic tools and open bioinformatics to study microbial diversity, food safety and biological risk across the food chain, built environments, animals and human health contexts.</p>
+          <p class="lead" style="margin: 1.35rem 0 1rem 0;">CLARITY LAB at UCD studies microbial systems that affect food safety, public health, antimicrobial resistance and One Health.</p>
+          <p class="lead" style="margin: 0 0 1.75rem 0;">We combine culture-based microbiology, direct-from-sample sequencing, long-read genomics, multi-omics and reproducible bioinformatics to make complex microbial communities easier to detect, interpret and act on.</p>
           <div class="buttons">
             <a class="button primary" href="#research">Explore our research</a>
             <a class="button secondary" href="#contact">Contact the lab</a>
@@ -506,8 +506,16 @@
         <div>
           <p class="eyebrow">Explainer</p>
           <h2>What is microbial dark matter?</h2>
-          <p class="lead">Many microorganisms remain difficult to grow, classify or interpret using standard methods. We study this hidden microbial diversity by combining culture-dependent microbiology, direct-from-sample sequencing, multi-omics and bioinformatics.</p>
-          <p>This allows us to investigate not only which microbes are present, but what they may be doing, how they interact and why they matter for food safety, antimicrobial resistance and One Health.</p>
+          <p class="lead">Many microbial systems remain poorly characterised. This includes organisms that are difficult to culture, complex microbiomes, mobile genetic elements, antimicrobial resistance genes and microbial interactions that are not visible using standard approaches.</p>
+          <p>CLARITY LAB investigates these systems by connecting laboratory microbiology with computational analysis.</p>
+          <p style="margin-bottom: 0.5rem;"><strong>Our work asks:</strong></p>
+          <ul style="padding-left: 1.5rem; margin: 0; color: var(--slate); line-height: 1.75;">
+            <li style="margin-bottom: 0.4rem;">Which microorganisms are present?</li>
+            <li style="margin-bottom: 0.4rem;">What functions do they carry?</li>
+            <li style="margin-bottom: 0.4rem;">How do pathogens, plasmids and resistance genes move?</li>
+            <li style="margin-bottom: 0.4rem;">Which microbial patterns indicate risk?</li>
+            <li style="margin-bottom: 0;">How can sequencing and bioinformatics support clearer decisions?</li>
+          </ul>
         </div>
         <div class="workflow">
           <div class="placeholder-diagram">
@@ -531,24 +539,57 @@
         <div class="cards four">
           <article class="card pillar" style="--accent:var(--ferment-gold)">
             <div class="icon" aria-hidden="true">01</div>
-            <h3>Microbial Dark Matter & Model Microbiomes</h3>
-            <p>We investigate hidden and poorly characterised microorganisms in complex microbial communities, using fermented foods and other model systems to understand microbial diversity, function and resilience.</p>
+            <h3>Microbial dark matter & model microbiomes</h3>
+            <p>We study hidden and poorly characterised microbial diversity in complex communities. Fermented foods, model microbiomes and environmental systems are used to investigate microbial function, resilience and interaction.</p>
           </article>
           <article class="card pillar" style="--accent:var(--culture-green)">
             <div class="icon" aria-hidden="true">02</div>
-            <h3>Food Safety & Microbial Ecology</h3>
-            <p>We study microbial communities across food systems to understand safety, quality, spoilage, persistence and risk.</p>
+            <h3>Food safety & microbial ecology</h3>
+            <p>We examine microbial communities across food systems to understand safety, spoilage, persistence and microbial risk.</p>
           </article>
           <article class="card pillar" style="--accent:var(--bio-teal)">
             <div class="icon" aria-hidden="true">03</div>
-            <h3>Pathogen Genomics, AMR & One Health</h3>
-            <p>We use microbiological, genomic and bioinformatic tools to track pathogens, antimicrobial resistance and food-chain risks across human, animal, environmental and built-environment contexts.</p>
+            <h3>Pathogen genomics, AMR & One Health</h3>
+            <p>We use genome sequencing, metagenomics and bioinformatics to study pathogens, antimicrobial resistance and biological risk across food, animal, human, environmental and built-environment contexts.</p>
           </article>
           <article class="card pillar" style="--accent:var(--genome-blue)">
             <div class="icon" aria-hidden="true">04</div>
-            <h3>Methods, Multi-Omics & Open Bioinformatics</h3>
-            <p>We develop and apply reproducible workflows to analyse complex microbial, genomic and multi-omics data, supporting microbial ecology, food safety and pathogen surveillance.</p>
+            <h3>Methods, multi-omics & open bioinformatics</h3>
+            <p>We develop and apply reproducible workflows for microbial genomics, microbiome analysis, long-read sequencing and multi-omics integration.</p>
           </article>
+        </div>
+        <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--line-grey);">
+          <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--deep-marine); text-align: center;">Current research areas</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; max-width: 960px; margin: 0 auto;">
+            <div style="display: flex; align-items: start; gap: 0.75rem; background: var(--pale-grey); padding: 1rem 1.25rem; border-radius: 14px; border: 1px solid var(--line-grey);">
+              <span style="color: var(--bio-teal); font-weight: bold; font-size: 1.2rem; line-height: 1;">•</span>
+              <span style="color: var(--slate); font-size: 0.98rem; font-weight: 500;">Long-read sequencing for microbial identification and surveillance</span>
+            </div>
+            <div style="display: flex; align-items: start; gap: 0.75rem; background: var(--pale-grey); padding: 1rem 1.25rem; border-radius: 14px; border: 1px solid var(--line-grey);">
+              <span style="color: var(--bio-teal); font-weight: bold; font-size: 1.2rem; line-height: 1;">•</span>
+              <span style="color: var(--slate); font-size: 0.98rem; font-weight: 500;">Metagenomics for antimicrobial resistance monitoring</span>
+            </div>
+            <div style="display: flex; align-items: start; gap: 0.75rem; background: var(--pale-grey); padding: 1rem 1.25rem; border-radius: 14px; border: 1px solid var(--line-grey);">
+              <span style="color: var(--bio-teal); font-weight: bold; font-size: 1.2rem; line-height: 1;">•</span>
+              <span style="color: var(--slate); font-size: 0.98rem; font-weight: 500;">Microbial dark matter in food and environmental systems</span>
+            </div>
+            <div style="display: flex; align-items: start; gap: 0.75rem; background: var(--pale-grey); padding: 1rem 1.25rem; border-radius: 14px; border: 1px solid var(--line-grey);">
+              <span style="color: var(--bio-teal); font-weight: bold; font-size: 1.2rem; line-height: 1;">•</span>
+              <span style="color: var(--slate); font-size: 0.98rem; font-weight: 500;">Taxonomy-free and AI-supported analysis of microbial communities</span>
+            </div>
+            <div style="display: flex; align-items: start; gap: 0.75rem; background: var(--pale-grey); padding: 1rem 1.25rem; border-radius: 14px; border: 1px solid var(--line-grey);">
+              <span style="color: var(--bio-teal); font-weight: bold; font-size: 1.2rem; line-height: 1;">•</span>
+              <span style="color: var(--slate); font-size: 0.98rem; font-weight: 500;">Pathogen genomics and genomic epidemiology</span>
+            </div>
+            <div style="display: flex; align-items: start; gap: 0.75rem; background: var(--pale-grey); padding: 1rem 1.25rem; border-radius: 14px; border: 1px solid var(--line-grey);">
+              <span style="color: var(--bio-teal); font-weight: bold; font-size: 1.2rem; line-height: 1;">•</span>
+              <span style="color: var(--slate); font-size: 0.98rem; font-weight: 500;">Fermented foods as model microbial ecosystems</span>
+            </div>
+            <div style="display: flex; align-items: start; gap: 0.75rem; background: var(--pale-grey); padding: 1rem 1.25rem; border-radius: 14px; border: 1px solid var(--line-grey);">
+              <span style="color: var(--bio-teal); font-weight: bold; font-size: 1.2rem; line-height: 1;">•</span>
+              <span style="color: var(--slate); font-size: 0.98rem; font-weight: 500;">Reproducible bioinformatics workflows for research and training</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -565,11 +606,19 @@
             <img class="portrait-photo" style="aspect-ratio: 1 / 1; height: auto;" src="assets/people/Guerrino.jpg" alt="Portrait of Dr Guerrino Macori" loading="lazy">
             <p class="role">Principal Investigator</p>
             <h3>Dr Guerrino Macori</h3>
-            <p class="thesis">Assistant Professor, UCD School of Biology and Environmental Science</p>
-            <p>Dr Guerrino Macori leads CLARITY LAB at UCD. He is an Assistant Professor in the UCD School of Biology and Environmental Science and a Conway Fellow, with additional affiliations to the UCD Centre for Food Safety and the UCD Institute of Food and Health.</p>
-            <p>His research examines microbial systems relevant to food safety, public health and One Health. The lab brings together food microbiology, microbial ecology, pathogen surveillance and applied bioinformatics to study how microbial communities are structured, how risks emerge and how biological evidence can be interpreted clearly.</p>
-            <p>Guerrino also teaches and supervises in areas related to applied bioinformatics, microbial genomics and microbiome analysis. His group provides a training environment for students and researchers working across experimental and computational microbiology.</p>
-            <p class="outside"><strong>Outside the lab:</strong> Profile details coming soon.</p>
+            <p class="thesis">Assistant Professor, UCD School of Biology and Environmental Science<br>Principal Investigator, CLARITY LAB at UCD</p>
+            <p>Dr Guerrino Macori leads research in applied bioinformatics, food microbiology, pathogen genomics and microbiome analysis. His work focuses on microbial systems relevant to food safety, public health and One Health.</p>
+            <p>The lab integrates experimental and computational approaches to study microbial communities, biological risk, antimicrobial resistance and the interpretation of complex sequencing data.</p>
+            <p>Guerrino teaches and supervises students in applied bioinformatics, pathogen genomics, food safety and microbiome analysis.</p>
+            <div class="repo-links">
+              <p>Professional Profiles:</p>
+              <a href="https://people.ucd.ie/guerrino.macori" target="_blank" rel="noopener">UCD Profile</a>
+              <a href="https://orcid.org/0000-0001-5835-8409" target="_blank" rel="noopener">ORCID</a>
+              <a href="https://www.linkedin.com/in/guerrinomacori/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://scholar.google.com/citations?hl=en&user=q7H11coAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a>
+              <a href="https://www.researchgate.net/profile/Guerrino-Macori" target="_blank" rel="noopener">ResearchGate</a>
+            </div>
+            <p class="outside"><strong>Outside the lab:</strong> Guerrino enjoys travelling, riding his Vespa, exploring new technologies and creative projects, and finding unexpected links between science, nature and everyday life. He enjoys cooking for friends, spending time outdoors and travelling with Geoffrey, his sweet Standard Poodle, who brings plenty of joy and adventure into daily life whenever possible. He is involved in his local community and volunteers with Parkrun, where both Guerrino and Geoffrey also enjoy taking part on Saturday mornings - although usually not for distances much beyond 5 km.</p>
           </article>
           <div class="cards two">
             <article class="card member">
@@ -578,7 +627,12 @@
               <h3>Mingwei Hong</h3>
               <p class="thesis">Computational Reconstruction of Synthetic Microbiomes for Predicting Pathogen Dynamics</p>
               <p>Mingwei explores synthetic microbiomes as controlled model systems for investigating microbial community dynamics and pathogen behaviour.</p>
-              <p class="outside"><strong>Outside the lab:</strong> Profile details coming soon.</p>
+              <div class="repo-links">
+                <p>Professional Profiles:</p>
+                <a href="https://www.linkedin.com/in/mingweihong/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=VI20VPUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+                <a href="https://www.researchgate.net/profile/Mingwei-Hong" target="_blank" rel="noopener">ResearchGate</a>
+              </div>
             </article>
             <article class="card member">
               <img class="portrait-photo" src="assets/people/Jacques.jpeg" alt="Portrait of Jacques Olivier" loading="lazy">
@@ -586,42 +640,40 @@
               <h3>Jacques Olivier</h3>
               <p class="thesis">AI-Enhanced Deciphering of Microbial Dark Matter</p>
               <p>Jacques investigates microbial dark matter to understand how functional traits, particularly antimicrobial resistance, disseminate through complex microbiomes.</p>
-              <p class="outside"><strong>Outside the lab:</strong> Profile details coming soon.</p>
+              <div class="repo-links">
+                <p>Professional Profiles:</p>
+                <a href="https://orcid.org/0009-0009-4114-0740" target="_blank" rel="noopener">ORCID</a>
+                <a href="https://www.linkedin.com/in/jacqueswolivier/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/Jacques-does-science" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.researchgate.net/profile/Jacques_Olivier2" target="_blank" rel="noopener">ResearchGate</a>
+              </div>
+              <p class="outside"><strong>Outside the lab:</strong> Jacques enjoys cooking, home fermentation and collecting houseplants, with a long-term goal of making the office just slightly more botanical. He also likes exploring Ireland, especially places with good scenery, good food or both.</p>
             </article>
             <article class="card member">
               <img class="portrait-photo" src="assets/people/Atefeh.jpeg" alt="Portrait of Atefeh Asadi" loading="lazy">
               <p class="role">Visiting PhD Researcher</p>
               <p class="affiliation-line">Tallinn University of Technology, Estonia</p>
               <h3>Atefeh Asadi</h3>
-              <p class="thesis">Project details coming soon.</p>
-              <p>Atefeh’s research profile will be added once details are confirmed.</p>
-              <p class="outside"><strong>Outside the lab:</strong> Profile details coming soon.</p>
+              <div class="repo-links">
+                <p>Professional Profiles:</p>
+                <a href="https://orcid.org/0009-0008-0306-6992" target="_blank" rel="noopener">ORCID</a>
+                <a href="https://www.linkedin.com/in/atefeh-asadi/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=Q0rNIKMAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+              </div>
             </article>
             <article class="card member">
               <img class="portrait-photo" src="assets/people/Sara.jpg" alt="Portrait of Sara Benetti" loading="lazy">
               <p class="role">Visiting PhD Researcher</p>
               <p class="affiliation-line">Università di Padova, Italy</p>
               <h3>Sara Benetti</h3>
-              <p class="thesis">Project details coming soon.</p>
-              <p>Sara’s research profile will be added once details are confirmed.</p>
-              <p class="outside"><strong>Outside the lab:</strong> Profile details coming soon.</p>
             </article>
           </div>
         </div>
         <p class="notice" style="margin-top:1.3rem;">For funded PhD, postdoctoral and research staff opportunities, please follow official UCD recruitment channels and announcements shared by the PI or School. Academic collaboration and project enquiries are welcome by email.</p>
-      </div>
-    </section>
-
-    <section class="section" id="alumni">
-      <div class="container alumni-card">
-        <div>
-          <p class="eyebrow">Alumni</p>
-          <h2>Where lab training leads</h2>
-          <p class="lead">Alumni profiles are being compiled and will be added once confirmed. This section will highlight former CLARITY LAB members, their research contributions, former roles and next destinations.</p>
-        </div>
-        <div class="card" style="border-left: 5px solid var(--bio-teal); padding: 2rem;">
-          <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Alumni profiles coming soon</h3>
-          <p style="margin: 0; color: var(--slate);">Details are currently being gathered and will be added once confirmed.</p>
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line-grey);">
+          <span class="eyebrow" style="font-size: 0.8rem; margin-bottom: 0.5rem; display: block;">Alumni</span>
+          <strong style="color: var(--deep-marine); display: block; margin-bottom: 0.25rem; font-size: 1.05rem;">Alumni profiles coming soon</strong>
+          <p style="margin: 0; color: var(--slate); font-size: 0.95rem;">Former CLARITY LAB members have contributed to research and training across microbiology, bioinformatics, food safety and One Health. Profiles are currently being compiled and will be added once details are confirmed.</p>
         </div>
       </div>
     </section>
@@ -648,7 +700,6 @@
           <p class="lead">A snapshot of CLARITY LAB at UCD across research meetings, conferences, teaching, outreach, collaboration and everyday scientific work.</p>
         </div>
         <div class="gallery-grid">
-          <img src="assets/gallery/Geoffrey.jpeg" class="gallery-item" loading="lazy" alt="AI image of Guerrino's dog, Geoffrey, working in the laboratory">
           <img src="assets/gallery/guerrino_at_stellenbosch.jpeg" class="gallery-item" loading="lazy" alt="Dr Guerrino Macori presenting at Stellenbosch University">
           <img src="assets/gallery/guerrino_fems.jpeg" class="gallery-item" loading="lazy" alt="Dr Guerrino Macori attending the FEMS conference">
           <img src="assets/gallery/guerrino_foodmicro.jpeg" class="gallery-item" loading="lazy" alt="Dr Guerrino Macori presenting at the FoodMicro conference">
