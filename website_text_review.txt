@@ -35,10 +35,6 @@ Link: Explore our research
 
 Link: Contact the lab
 
-Hero diagram placeholder
-
-Replace with a static microbial-systems visual or lab image.
-
 Selected funders, collaborators and project partners
 
 ================================================================================
@@ -209,6 +205,10 @@ Visiting PhD Researcher
 Tallinn University of Technology, Estonia
 
 [Atefeh Asadi]
+Psychrotrophic bacteria in food spoilage and safety
+
+My research focuses on applying advanced sequencing and multi-omics approaches, including full-length 16S rRNA and ITS sequencing, whole-genome sequencing, and shotgun metagenomics, to investigate microbial succession and the functional adaptation of spoilage-associated microorganisms in ready-to-eat foods.
+
 Professional Profiles:
 
 Link: ORCID
@@ -216,6 +216,10 @@ Link: ORCID
 Link: LinkedIn
 
 Link: Google Scholar
+
+Outside the lab:
+
+I enjoy cooking and baking so much that, if I had another chance, I would probably become a baker instead of a microbiologist.
 
 Visiting PhD Researcher
 
