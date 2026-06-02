@@ -27,9 +27,12 @@ SECTION: HOME / HERO SECTION
 Integrative Microbiology, Multi-Omics & Applied Bioinformatics
 
 [Making microbial systems visible, testable and traceable.]
-CLARITY LAB at UCD studies microbial systems that affect food safety, public health, antimicrobial resistance and One Health.
+CLARITY LAB at UCD studies microbial systems that affect
+            food safety, public health, antimicrobial resistance and One Health.
 
-We combine culture-based microbiology, direct-from-sample sequencing, long-read genomics, multi-omics and reproducible bioinformatics to make complex microbial communities easier to detect, interpret and act on.
+We combine culture-based microbiology, direct-from-sample
+            sequencing, long-read genomics, multi-omics and reproducible bioinformatics to make complex microbial
+            communities easier to detect, interpret and act on.
 
 Link: Explore our research
 
@@ -44,7 +47,9 @@ SECTION: EXPLAINER: WHAT IS MICROBIAL DARK MATTER?
 Explainer
 
 [What is microbial dark matter?]
-Many microbial systems remain poorly characterised. This includes organisms that are difficult to culture, complex microbiomes, mobile genetic elements, antimicrobial resistance genes and microbial interactions that are not visible using standard approaches.
+Many microbial systems remain poorly characterised. This includes organisms that are difficult
+            to culture, complex microbiomes, mobile genetic elements, antimicrobial resistance genes and microbial
+            interactions that are not visible using standard approaches.
 
 CLARITY LAB investigates these systems by connecting laboratory microbiology with computational analysis.
 
@@ -60,16 +65,6 @@ Which microbial patterns indicate risk?
 
 How can sequencing and bioinformatics support clearer decisions?
 
-Sample
-
-Culture / sequence
-
-Insight
-
-Workflow diagram placeholder
-
-Replace with a simple sample-to-insight diagram.
-
 ================================================================================
 
 SECTION: RESEARCH PILLARS
@@ -77,56 +72,70 @@ SECTION: RESEARCH PILLARS
 Research
 
 [Research pillars]
-Our work connects microbial discovery, food-system safety, pathogen genomics, antimicrobial resistance and reproducible analysis to generate insight for public health and safer food systems.
+Our work connects microbial discovery, food-system safety, pathogen genomics, antimicrobial
+            resistance and reproducible analysis to generate insight for public health and safer food systems.
 
 Pillar 01:
 
 [Microbial dark matter & model microbiomes]
-We study hidden and poorly characterised microbial diversity in complex communities. Fermented foods, model microbiomes and environmental systems are used to investigate microbial function, resilience and interaction.
+We study hidden and poorly characterised microbial diversity in complex communities. Fermented foods,
+              model microbiomes and environmental systems are used to investigate microbial function, resilience and
+              interaction.
 
 Pillar 02:
 
 [Food safety & microbial ecology]
-We examine microbial communities across food systems to understand safety, spoilage, persistence and microbial risk.
+We examine microbial communities across food systems to understand safety, spoilage, persistence and
+              microbial risk.
 
 Pillar 03:
 
 [Pathogen genomics, AMR & One Health]
-We use genome sequencing, metagenomics and bioinformatics to study pathogens, antimicrobial resistance and biological risk across food, animal, human, environmental and built-environment contexts.
+We use genome sequencing, metagenomics and bioinformatics to study pathogens, antimicrobial resistance
+              and biological risk across food, animal, human, environmental and built-environment contexts.
 
 Pillar 04:
 
 [Methods, multi-omics & open bioinformatics]
-We develop and apply reproducible workflows for microbial genomics, microbiome analysis, long-read sequencing and multi-omics integration.
+We develop and apply reproducible workflows for microbial genomics, microbiome analysis, long-read
+              sequencing and multi-omics integration.
 
-[Current research areas]
+[Current
+            research areas]
 •
 
-Long-read sequencing for microbial identification and surveillance
-
-•
-
-Metagenomics for antimicrobial resistance monitoring
-
-•
-
-Microbial dark matter in food and environmental systems
+Long-read sequencing for
+                microbial identification and surveillance
 
 •
 
-Taxonomy-free and AI-supported analysis of microbial communities
+Metagenomics for antimicrobial
+                resistance monitoring
 
 •
 
-Pathogen genomics and genomic epidemiology
+Microbial dark matter in food and
+                environmental systems
 
 •
 
-Fermented foods as model microbial ecosystems
+Taxonomy-free and AI-supported
+                analysis of microbial communities
 
 •
 
-Reproducible bioinformatics workflows for research and training
+Pathogen genomics and genomic
+                epidemiology
+
+•
+
+Fermented foods as model
+                microbial ecosystems
+
+•
+
+Reproducible bioinformatics
+                workflows for research and training
 
 ================================================================================
 
@@ -135,18 +144,23 @@ SECTION: THE LAB TEAM
 People & Culture
 
 [The lab team]
-CLARITY LAB at UCD is a collaborative research environment for students, researchers and partners working across microbiology, bioinformatics, food safety and public health.
+CLARITY LAB at UCD is a collaborative research environment for students, researchers and
+            partners working across microbiology, bioinformatics, food safety and public health.
 
 Principal Investigator
 
 [Dr Guerrino Macori]
 Assistant Professor, UCD School of Biology and Environmental Science
 
-Dr Guerrino Macori leads research in applied bioinformatics, food microbiology, pathogen genomics and microbiome analysis. His work focuses on microbial systems relevant to food safety, public health and One Health.
+Dr Guerrino Macori leads research in applied bioinformatics, food microbiology, pathogen genomics and
+              microbiome analysis. His work focuses on microbial systems relevant to food safety, public health and One
+              Health.
 
-The lab integrates experimental and computational approaches to study microbial communities, biological risk, antimicrobial resistance and the interpretation of complex sequencing data.
+The lab integrates experimental and computational approaches to study microbial communities, biological
+              risk, antimicrobial resistance and the interpretation of complex sequencing data.
 
-Guerrino teaches and supervises students in applied bioinformatics, pathogen genomics, food safety and microbiome analysis.
+Guerrino teaches and supervises students in applied bioinformatics, pathogen genomics, food safety and
+              microbiome analysis.
 
 Professional Profiles:
 
@@ -162,14 +176,20 @@ Link: ResearchGate
 
 Outside the lab:
 
-Guerrino enjoys travelling, riding his Vespa, exploring new technologies and creative projects, and finding unexpected links between science, nature and everyday life. He enjoys cooking for friends, spending time outdoors and travelling with Geoffrey, his sweet Standard Poodle, who brings plenty of joy and adventure into daily life whenever possible. He is involved in his local community and volunteers with Parkrun, where both Guerrino and Geoffrey also enjoy taking part on Saturday mornings - although usually not for distances much beyond 5 km.
+Guerrino enjoys travelling, riding his Vespa, exploring
+              new technologies and creative projects, and finding unexpected links between science, nature and everyday
+              life. He enjoys cooking for friends, spending time outdoors and travelling with Geoffrey, his sweet
+              Standard Poodle, who brings plenty of joy and adventure into daily life whenever possible. He is involved
+              in his local community and volunteers with Parkrun, where both Guerrino and Geoffrey also enjoy taking
+              part on Saturday mornings - although usually not for distances much beyond 5 km.
 
 PhD Candidate
 
 [Mingwei Hong]
 Computational Reconstruction of Synthetic Microbiomes for Predicting Pathogen Dynamics
 
-Mingwei explores synthetic microbiomes as controlled model systems for investigating microbial community dynamics and pathogen behaviour.
+Mingwei explores synthetic microbiomes as controlled model systems for investigating microbial
+                community dynamics and pathogen behaviour.
 
 Professional Profiles:
 
@@ -184,7 +204,8 @@ PhD Candidate
 [Jacques Olivier]
 AI-Enhanced Deciphering of Microbial Dark Matter
 
-Jacques investigates microbial dark matter to understand how functional traits, particularly antimicrobial resistance, disseminate through complex microbiomes.
+Jacques investigates microbial dark matter to understand how functional traits, particularly
+                antimicrobial resistance, disseminate through complex microbiomes.
 
 Professional Profiles:
 
@@ -198,7 +219,9 @@ Link: ResearchGate
 
 Outside the lab:
 
-Jacques enjoys cooking, home fermentation and collecting houseplants, with a long-term goal of making the office just slightly more botanical. He also likes exploring Ireland, especially places with good scenery, good food or both.
+Jacques enjoys cooking, home fermentation and
+                collecting houseplants, with a long-term goal of making the office just slightly more botanical. He also
+                likes exploring Ireland, especially places with good scenery, good food or both.
 
 Visiting PhD Researcher
 
@@ -207,7 +230,9 @@ Tallinn University of Technology, Estonia
 [Atefeh Asadi]
 Psychrotrophic bacteria in food spoilage and safety
 
-My research focuses on applying advanced sequencing and multi-omics approaches, including full-length 16S rRNA and ITS sequencing, whole-genome sequencing, and shotgun metagenomics, to investigate microbial succession and the functional adaptation of spoilage-associated microorganisms in ready-to-eat foods.
+My research focuses on applying advanced sequencing and multi-omics approaches, including full-length
+                16S rRNA and ITS sequencing, whole-genome sequencing, and shotgun metagenomics, to investigate microbial
+                succession and the functional adaptation of spoilage-associated microorganisms in ready-to-eat foods.
 
 Professional Profiles:
 
@@ -219,20 +244,42 @@ Link: Google Scholar
 
 Outside the lab:
 
-I enjoy cooking and baking so much that, if I had another chance, I would probably become a baker instead of a microbiologist.
+I enjoy cooking and baking so much that, if I had
+                another chance, I would probably become a baker instead of a microbiologist.
 
 Visiting PhD Researcher
 
 Università di Padova, Italy
 
 [Sara Benetti]
-For funded PhD, postdoctoral and research staff opportunities, please follow official UCD recruitment channels and announcements shared by the PI or School. Academic collaboration and project enquiries are welcome by email.
+Pathogens and spoilers persist in food environments, posing challenges for food safety
+
+Sara’s research investigates how foodborne pathogens and spoilage bacteria persist in food-processing environments despite exposure to cleaning, processing and other stress conditions. Her project focuses on bacterial dormancy as a possible survival strategy, using microbiology and molecular biology approaches to explore the pathways that allow persistent bacteria to withstand stress and reappear over time.
+
+Professional Profiles:
+
+Link: ORCID
+
+Link: LinkedIn
+
+Link: ResearchGate
+
+Outside the lab:
+
+Sara enjoys traveling, good food, live music, and spending time with her dog, Hubble. Her beloved companion often accompanies her to the office, where he doubles as an unofficial therapy dog, always ready to offer a cuddle to anyone in need.
+
+For funded PhD, postdoctoral and research staff opportunities,
+          please follow official UCD recruitment channels and announcements shared by the PI or School. Academic
+          collaboration and project enquiries are welcome by email.
 
 Alumni
 
-Alumni profiles coming soon
+Alumni
+            profiles coming soon
 
-Former CLARITY LAB members have contributed to research and training across microbiology, bioinformatics, food safety and One Health. Profiles are currently being compiled and will be added once details are confirmed.
+Former CLARITY LAB members have contributed to
+            research and training across microbiology, bioinformatics, food safety and One Health. Profiles are
+            currently being compiled and will be added once details are confirmed.
 
 ================================================================================
 
@@ -241,10 +288,13 @@ SECTION: SELECTED OUTPUTS
 Selected Outputs
 
 [Curated publications and project outputs]
-This section highlights selected publications, educational resources and research outputs from the lab. A small curated set will be added here, with links to maintained external profiles for a complete publication record.
+This section highlights selected publications, educational resources and research outputs from
+            the lab. A small curated set will be added here, with links to maintained external profiles for a complete
+            publication record.
 
 [Selected outputs coming soon]
-A curated set of publications, research outputs and educational resources will be added here once the final spotlight selection is confirmed.
+A curated set of publications, research outputs and educational
+            resources will be added here once the final spotlight selection is confirmed.
 
 ================================================================================
 
@@ -253,14 +303,17 @@ SECTION: LAB LIFE / GALLERY
 Lab Life
 
 [Research in practice]
-A snapshot of CLARITY LAB at UCD across research meetings, conferences, teaching, outreach, collaboration and everyday scientific work.
+A snapshot of CLARITY LAB at UCD across research meetings, conferences, teaching, outreach,
+            collaboration and everyday scientific work.
 
 ================================================================================
 
 SECTION: CONTACT & COLLABORATION (FOOTER)
 --------------------------------------------------------------------------------
 [Contact and collaboration]
-We collaborate with academic, clinical, public-health, food-sector and computational partners on projects involving microbiology, sequencing, microbial ecology, genomic epidemiology, antimicrobial resistance and food-system safety.
+We collaborate with academic, clinical, public-health, food-sector and computational partners on projects
+            involving microbiology, sequencing, microbial ecology, genomic epidemiology, antimicrobial resistance and
+            food-system safety.
 
 Link: Email the lab
 
